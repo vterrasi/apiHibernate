@@ -2,7 +2,7 @@ package com.cursoSpring.apiHibernate.infrastructure.persistence.adapters;
 
 import com.cursoSpring.apiHibernate.application.mappers.RentalMapper;
 import com.cursoSpring.apiHibernate.domain.models.RentalModel;
-import com.cursoSpring.apiHibernate.domain.ports.RentRepositoryPort;
+import com.cursoSpring.apiHibernate.domain.ports.RentalRepositoryPort;
 import com.cursoSpring.apiHibernate.infrastructure.persistence.repositories.RentalJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
-public class RentalRepositoryImpl implements RentRepositoryPort {
+public class RentalRepositoryImpl implements RentalRepositoryPort {
 
     private final RentalJpaRepository jpaRepository;
 

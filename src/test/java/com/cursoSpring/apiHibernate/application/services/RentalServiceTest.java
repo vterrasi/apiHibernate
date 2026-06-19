@@ -7,7 +7,7 @@ import com.cursoSpring.apiHibernate.domain.enums.RentalStatus;
 import com.cursoSpring.apiHibernate.domain.models.MovieModel;
 import com.cursoSpring.apiHibernate.domain.models.RentalModel;
 import com.cursoSpring.apiHibernate.domain.ports.MovieRepositoryPort;
-import com.cursoSpring.apiHibernate.domain.ports.RentRepositoryPort;
+import com.cursoSpring.apiHibernate.domain.ports.RentalRepositoryPort;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -27,7 +27,7 @@ class RentalServiceTest {
     private MovieRepositoryPort movieRepository;
 
     @Mock
-    private RentRepositoryPort rentRepository;
+    private RentalRepositoryPort rentRepository;
 
     @Mock
     private CreateRentalValidator validator;

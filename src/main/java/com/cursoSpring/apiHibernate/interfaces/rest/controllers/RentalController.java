@@ -9,12 +9,22 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/rentals")
 @RequiredArgsConstructor
 public class RentalController {
 
     private final RentalService rentalService;
+
+    @GetMapping
+    public List<RentalResponse> getAll() {
+        return rentalService.findAll()
+                .stream()
+                .map(RentalResponse::from)
+                .toList();
+    }
 
     @PostMapping
     public ResponseEntity<RentalResponse> create(@RequestBody CreateRentalRequest request) {

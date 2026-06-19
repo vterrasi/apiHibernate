@@ -9,7 +9,7 @@ import com.cursoSpring.apiHibernate.domain.exceptions.DomainException;
 import com.cursoSpring.apiHibernate.domain.models.MovieModel;
 import com.cursoSpring.apiHibernate.domain.models.RentalModel;
 import com.cursoSpring.apiHibernate.domain.ports.MovieRepositoryPort;
-import com.cursoSpring.apiHibernate.domain.ports.RentRepositoryPort;
+import com.cursoSpring.apiHibernate.domain.ports.RentalRepositoryPort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +21,7 @@ import java.util.UUID;
 public class RentalService {
 
     private final MovieRepositoryPort movieRepository;
-    private final RentRepositoryPort rentalRepository;
+    private final RentalRepositoryPort rentalRepository;
     private final CreateRentalValidator validator;
 
     public RentalModel createRental(CreateRentalRequest request) {
@@ -94,5 +94,9 @@ public class RentalService {
                         movie.getType() == MovieType.NEW_RELEASE ? 5.0 : 3.0
                 )
                 .sum();
+    }
+
+    public List<RentalModel> findAll() {
+        return rentalRepository.findAll();
     }
 }
